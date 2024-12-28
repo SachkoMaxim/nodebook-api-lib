@@ -1,14 +1,23 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "declaration": true,
-    "declarationDir": "./dist",
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
     "strict": true,
-    "module": "commonjs",
-    "target": "es6",
-    "esModuleInterop": true
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "types": ["jest", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["**/*.ts", "src/*.ts", "tests/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
