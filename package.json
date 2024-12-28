@@ -1,6 +1,6 @@
 {
-  "name": "nodebook-api-lib",
-  "version": "1.0.0",
+  "name": "nodebook-api",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "build": "tsc",
