@@ -1,0 +1,5 @@
+#!/bin/bash
+
+npx lint-staged
+npm run test:all
+npm run build
