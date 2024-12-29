@@ -1,10 +1,10 @@
 {
   "name": "nodebook-api",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "",
-  "main": ".dist/index.js",
-  "module": ".dist/index.mjs",
-  "types": ".dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "repository": {
     "url": "https://github.com/SachkoMaxim/nodebook-api-lib"
   },

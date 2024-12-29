@@ -1,4 +1,5 @@
-import api, { ApiError } from '@/api'
+import { api } from '@/api'
+import { ApiError } from '@/interfaces'
 import fetchMock from 'jest-fetch-mock'
 
 fetchMock.enableMocks()

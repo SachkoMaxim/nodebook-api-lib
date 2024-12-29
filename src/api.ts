@@ -1,31 +1,11 @@
-export interface ApiResponse<T> {
-  data: T
-  status: number
-  headers: Headers
-}
-
-export interface ApiError extends Error {
-  status?: number
-  statusText?: string
-  data?: unknown
-}
-
-export interface RequestConfig<T = unknown> {
-  baseURL?: string
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'
-  headers?: Record<string, string>
-  body?: Record<string, unknown> | Array<unknown> | T
-  withCredentials?: boolean
-  timeout?: number
-  signal?: AbortSignal
-  cache?: RequestCache
-}
-
-export type GetConfig = Omit<RequestConfig, 'method'>
-export type PostConfig = Omit<RequestConfig, 'method'>
-export type PutConfig = Omit<RequestConfig, 'method'>
-export type DeleteConfig = Omit<RequestConfig, 'method'>
-export type PatchConfig = Omit<RequestConfig, 'method'>
+import { ApiResponse, ApiError, RequestConfig } from './interfaces'
+import {
+  GetConfig,
+  PostConfig,
+  PutConfig,
+  DeleteConfig,
+  PatchConfig,
+} from './types'
 
 const request = async <T>(
   url: string,
@@ -101,7 +81,7 @@ const request = async <T>(
   }
 }
 
-const api = {
+export const api = {
   get: <T>(url: string, config: GetConfig = {}) =>
     request<T>(url, { ...config, method: 'GET' }),
 
@@ -117,5 +97,3 @@ const api = {
   patch: <T>(url: string, config: PatchConfig = {}) =>
     request<T>(url, { ...config, method: 'PATCH' }),
 }
-
-export default api
