@@ -19,4 +19,5 @@ export interface RequestConfig<T = unknown> {
   timeout?: number
   signal?: AbortSignal
   cache?: RequestCache
+  params?: Record<string, string | number>
 }

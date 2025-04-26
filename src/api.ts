@@ -20,7 +20,19 @@ const request = async <T>(
     timeout = 30000,
     signal,
     cache = 'default',
+    params,
   } = config
+
+  if (params) {
+    const queryParams = new URLSearchParams()
+    for (const key in params) {
+      queryParams.append(key, String(params[key]))
+    }
+    const queryString = queryParams.toString()
+    if (queryString) {
+      url += (url.includes('?') ? '&' : '?') + queryString
+    }
+  }
 
   const defaultHeaders: Record<string, string> = {
     'Content-Type': 'application/json',
